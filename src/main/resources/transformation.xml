@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+    <configuration>
+        <wildcard>false</wildcard>
+    </configuration>
+    <mapping>
+        <class-a>com.redhat.empowered.businessservice.QueryPerson</class-a>
+        <class-b>com.redhat.empowered.businessservice.Person</class-b>
+        <field>
+            <a>id</a>
+            <b>id</b>
+        </field>
+    </mapping>
+    <mapping>
+        <class-a>org.apache.camel.component.dozer.VariableMapper</class-a>
+        <class-b>com.redhat.empowered.businessservice.Person</class-b>
+    </mapping>
+    <mapping>
+        <class-a>org.apache.camel.component.dozer.ExpressionMapper</class-a>
+        <class-b>com.redhat.empowered.businessservice.Person</class-b>
+        <field custom-converter-id="_expressionMapping" custom-converter-param="simple:\${random(10)}">
+            <a>expression</a>
+            <b>age</b>
+        </field>
+        <field custom-converter-id="_expressionMapping" custom-converter-param="constant:John Doe">
+            <a>expression</a>
+            <b>name</b>
+        </field>
+    </mapping>
+</mappings>
