@@ -29,10 +29,12 @@
         <route id="cxfPOJOMode">
             <from id="cxfStarter" uri="ref:test"/>
             <to id="_to1" uri="ref:tr01"/>
+            <convertBodyTo id="_convertBodyTo1" type="com.redhat.empowered.businessservice.Person"/>
+            <log id="_log3" message="${body.class} ${body}"/>
         </route>
         <route id="cxfPayloadMode">
             <from id="cxfpload" uri="cxf:http://localhost:7999?serviceName={http://www.redhat.com/empowered/businessService}personSoapHttpService&amp;dataFormat=PAYLOAD&amp;portName={http://www.redhat.com/empowered/businessService}personSoapHttpPort&amp;wsdlURL=classpath:wsdl/businessService.wsdl"/>
-            <to id="_xslt" uri="xslt:xslt/transform.xsl"/>
+            <to id="_xslt" uri="xslt:xslt/transform.xsl?saxon=true"/>
         </route>
     </camelContext>
 </beans>

@@ -9,7 +9,7 @@
 	<xsl:template match="/">
 		<ns2:person xmlns:ns2="http://www.redhat.com/empowered/businessService">
 			<id>
-				<xsl:value-of select="/*:queryPerson/*:id" />
+ 				<xsl:value-of select="/*:queryPerson/*:id" />
 			</id>
 			<name>John Doe</name>
 			<xsl:variable name="curtm" select="xs:string(fn:current-dateTime())" />
